@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# User Profile Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de gestión de perfiles de usuario desarrollada como parte de una evaluación técnica. La aplicación proporciona una interfaz de usuario para gestionar los datos del usuario, como el nombre, el nombre de usuario, el correo electrónico, el número de teléfono, la contraseña y la eliminación de la cuenta. La aplicación, creada con React, TypeScript, Tailwind CSS y Axios, sigue las mejores prácticas para el desarrollo de la interfaz de usuario, la gestión de estados y el consumo de API.
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Características](#características)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Introducción](#introducción)
+- [Instalación](#instalación)
+- [Ejecución de la aplicación](#ejecución-de-la-aplicación)
+## Características
 
-## Expanding the ESLint configuration
+- **Descripción general del perfil**: muestra detalles del usuario, como nombre, nombre de usuario, correo electrónico y número de teléfono.
+- **Actualizar información**: permite a los usuarios navegar para actualizar su información personal, como nombre, nombre de usuario y número de teléfono.
+- **Cambiar contraseña**: proporciona una interfaz segura para actualizar la contraseña del usuario.
+- **Diseño adaptable**: interfaz de usuario totalmente adaptable con **Tailwind CSS**, lo que garantiza la compatibilidad entre dispositivos.
+- **Navegación fluida**: experiencia de usuario intuitiva con `React Router` para un enrutamiento fluido del lado del cliente.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologías utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: biblioteca de JavaScript para crear interfaces de usuario.
+- **TypeScript**: superconjunto de JavaScript fuertemente tipado para seguridad de tipos.
+- **Tailwind CSS**: marco de CSS que prioriza la utilidad para un estilo eficiente.
+- **Axios**: cliente HTTP basado en promesas para realizar solicitudes de API.
+- **React Router**: para navegar entre diferentes vistas en la aplicación.
+- **shadcn/ui**: biblioteca de componentes para acelerar el desarrollo.
+- **Vite**: herramienta de creación de frontend rápida para una experiencia de desarrollo de alto rendimiento.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Introducción
+
+Estas instrucciones le permitirán obtener una copia del proyecto en funcionamiento en su máquina local para fines de desarrollo y prueba.
+
+### Requisitos previos
+
+- **Node.js** (v16 o superior) y **npm** instalados en su máquina.
+- Una instancia en ejecución del servidor backend. La API está alojada en `http://localhost:5119`.
+
+### Instalación
+
+Clone el repositorio e instale las dependencias:
+
+```bash
+git clone https://github.com/DanielTriveno/appfrontend.git
+cd appfrontend
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Ejecución de la Aplicación
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Para iniciar el servidor de desarrollo, ejecuta el siguiente comando:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
